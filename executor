@@ -1,0 +1,67 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "Zayden Executor", IntroText = "Zayden Executor", HidePremium = true, SaveConfig = true, ConfigFolder = "OrionTest", IntroEnabled = true, IntroIcon = "http://www.roblox.com/asset/?id=13817032211"})
+local I
+local Is
+
+OrionLib:MakeNotification({
+	Name = "Zayden executor",
+	Content = "My ui Library",
+	Image = "rbxassetid://4483345998",
+	Time = 10
+})
+
+local Tab = Window:MakeTab({
+	Name = "Script",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "tycoon",
+	Callback = function()
+      		loadstring(game:HttpGet("https://pastebin.com/raw/U9WBdeFe"))() 
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Invis",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/0Ben1/fe./dbb6ce6f6cee4f7a5c9e20d7b88e83db2a93bf25/Invisible%20GUI'))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "IY",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+  	end    
+})
+
+Tab:AddParagraph("scripts","Invis, Tycoon, Iy")
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+Tab:AddTextbox({
+	Name = "Script Link",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(val)
+	Is = val
+	end
+})
+
+Tab:AddButton({
+	Name = "Execute",
+	Callback = function()
+		loadstring(game:HttpGet(Is, true))()
+		print("executed")
+  	end    
+})
+
+Tab:AddParagraph("How to use?","only put link of script not code or loadstring")
